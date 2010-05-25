@@ -12,9 +12,7 @@ class LocalizationExtension < Spree::Extension
         
         private
         def set_user_language
-          locale = session[:locale] || Spree::Config[:default_locale] || I18n.default_locale
-          locale = AVAILABLE_LOCALES.keys.include?(locale) ? locale : I18n.default_locale
-          I18n.locale = locale
+          I18n.locale = 'ru-RU'
         end
     end
   end
