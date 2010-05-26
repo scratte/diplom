@@ -195,7 +195,7 @@ body {
     #sub-menu ul li a {
       padding: 3px 7px;
       margin: 10px 5px;
-      color: black;
+      color: #000;
       background: none; }
     #sub-menu ul li.selected a {
        color: #154e8c;
