@@ -160,49 +160,45 @@ body {
         #sub-menu ul li a {
           display: block;
           padding: 10px 20px;
-          color: #fff;
+          color: black;
           text-decoration: none;
           outline: none; }
         #admin-menu ul li.selected a,
         #sub-menu ul li.selected a {
-          background-color: #0095da;
+
           }
         #admin-menu ul li.selected {
-          border-bottom:1px solid #0095DA;
+          border-bottom:1px solid;
         }
   #IE7 #admin-menu {
     height: 39px; }
   #admin-menu {
-    background: #154e8c top left repeat-x;
-    border-top: 1px solid #4B83E2;
-    border-right: 1px solid #34599B;
-    border-bottom: 1px solid #41A6F0;
+   
+    border-top: 1px solid;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
     }
     #admin-menu ul {
       margin-bottom: -1px; }
       #admin-menu ul li:first-child {
-        border-left: 1px solid #34599B; }
+        border-left: 1px solid; }
       #admin-menu ul li.selected {
-        background: #0095da top left repeat-x;
-        border-left: 1px solid #41A6F0;
-        border-top: 1px solid #41A6F0;
-        border-right: 1px solid #4986BF;
+        border-left: 1px solid;
+        border-top: 1px solid;
+        border-right: 1px solid;
         height: 40px;
         margin-top: -2px; }
   #sub-menu {
-    background: #0095da;
-    border-left: 1px solid #41A6F0;
-    border-right: 1px solid #4986BF; }
+     }
     #IE7 #sub-menu ul {
       height: 26px; }
     #sub-menu ul li a {
       padding: 3px 7px;
       margin: 10px 5px;
-      color: #154e8c;
+      color: #000;
       background: none; }
     #sub-menu ul li.selected a {
-      background: #154e8c;
-      color: #9BC3FC;
+       color: #154e8c;
       -moz-border-radius: 3px;
       -webkit-border-radius: 3px; }
   #slide-content {
