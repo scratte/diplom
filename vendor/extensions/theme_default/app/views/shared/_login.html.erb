@@ -28,9 +28,3 @@
 
 <% end %>
 
-<% if Spree::Config[:allow_openid] %>
-  <hr />
-  <p id='enable_login_via_openid'><a href='#'><%= t :enable_login_via_openid %></a></p>
-  <p id='enable_login_via_login_password' style="display:none"><a href='#'><%= t :enable_login_via_login_password %></a></p>
-  <%= javascript_include_tag 'open_id' %>
-<% end %>

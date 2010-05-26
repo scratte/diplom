@@ -40,8 +40,7 @@
       <% hook :admin_products_index_row_actions, locals do %>
         <%= link_to_edit product unless product.deleted?  %>
         &nbsp;
-        <%= link_to_clone product %>
-        &nbsp;
+               &nbsp;
         <%= link_to_delete product unless product.deleted?  %>
       <% end %>
     </td>

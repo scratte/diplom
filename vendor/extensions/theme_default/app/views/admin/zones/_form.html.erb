@@ -10,18 +10,12 @@
 
 <p>
   <label><%= t("type") %></label><br />  
-  <label class="sub">
-    <%= zone_form.radio_button("kind", "country", {:id => "country_based"}) %>
-    <%= t("country_based") %>
-  </label> &nbsp; 
+ &nbsp; 
   <label class="sub">
     <%= zone_form.radio_button("kind", "state", {:id => "state_based"}) %>
     <%= t("state_based") %>
   </label> &nbsp; 
-  <label class="sub">                                         
-    <%= zone_form.radio_button("kind", "zone", {:id => "zone_based"}) %>
-    <%= t("zone_based") %>
-  </label>
+ 
 </p>
 
 <%= render "member_type", :type => "country", :zone_form => zone_form %> 
