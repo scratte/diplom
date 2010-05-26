@@ -56,3 +56,4 @@ require 'stringex'
 require 'will_paginate'
 
 Spree::Config.set(:default_country_id => 168)
+Spree::Config.set(:allow_openid => false)
