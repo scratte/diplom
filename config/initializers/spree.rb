@@ -57,3 +57,4 @@ require 'will_paginate'
 
 Spree::Config.set(:default_country_id => 168)
 Spree::Config.set(:allow_openid => false)
+Spree::Config.set(:site_name => "Тестовый ресурс")
