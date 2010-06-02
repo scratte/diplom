@@ -9,7 +9,7 @@ class Image < Asset
   # we need to look at the write-queue for images which have not been saved yet
   after_post_process :find_dimensions
   def find_dimensions
-    temporary = attachment.queued_for_write[:original] 
+    temporary = attachment.queued_for_write[:original]
     filename = temporary.path unless temporary.nil?
     filename = attachment.path if filename.blank?
     geometry = Paperclip::Geometry.from_file(filename)
