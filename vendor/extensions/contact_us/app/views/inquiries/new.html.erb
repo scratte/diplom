@@ -1,0 +1,31 @@
+<% content_for :page_title do %>
+	<%= @site_page.page_title rescue 'Charity T-Shirts, Wolfmother, The National, Broken Social Scene, Devendra Banhart, Clap Your Hands Say Yeah, Rilo Kiley...' %>
+<% end %>
+ 
+<h1 class="form"><%= t("contact_us") %></h1>
+<script type="text/javascript">
+	Cufon.replace('h1.form');
+</script>
+
+<%= error_messages_for :inquiry %>
+<div class="generic_form">
+	<% form_for(:inquiry, :url => collection_url) do |f| %>
+	  <p><%= f.label :name, t("your_name") %>
+		   <%= f.text_field :name, :class => 'required' %>
+		</p>
+		<p><%= f.label :email, t("your_email_address") %>
+		   <%= f.text_field :email, :class => 'required email' %>
+		</p>
+		<p><%= f.label :message, t("message") %>
+		   <%= f.text_area :message, :class => 'required' %>
+		</p>
+	  <p>
+	    <%= submit_tag t("send_it") %>
+	  </p>
+	<% end %>
+	<script>
+	  $(document).ready(function(){
+	    $(".generic_form form").validate();
+	  });
+	  </script>
+</div>

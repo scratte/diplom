@@ -1,0 +1,22 @@
+<%= t("dear_customer") %>
+
+<%= t("please_review_and_retain_the_following_order_information_for_your_records") %>
+
+============================================================
+<%= t("order_summary") %>
+============================================================
+<% for item in @order.line_items -%>
+<%=item.variant.sku %> <%=item.variant.product.name-%> <%= variant_options(item.variant) %> (<%=item.quantity-%>) @ $ <%= sprintf("%0.2f", item.price) %> = $ <%= sprintf("%0.2f", item.price * item.quantity) %>
+	<% if @order.checkout_complete %>
+		<%= render_links(item) %>
+	<% end %>
+<% end -%>      
+============================================================
+<%= t("subtotal") %>: <%= number_to_currency @order.item_total %>
+<% @order.charges.each do |charge| %>
+  <%= "#{charge.description}: #{number_to_currency charge.amount}"%>
+<% end %>
+<%= t("order_total") %>: <%= number_to_currency @order.total %>
+
+
+<%= t("thank_you_for_your_business") %>

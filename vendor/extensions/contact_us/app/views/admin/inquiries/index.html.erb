@@ -1,0 +1,35 @@
+<h1><%= t("contact_us_forms") %></h1>
+<h4><%= t("this_is_a_list_of_all_the_contact_us_forms_submitted_on_the_site_you_also_receive_copies_of_these_inquiries_by_email.") %></h4>
+
+<table class="admin-report" width="545">
+	<thead>
+		<tr>
+      		<th><%= t("name") %></th>
+      		<th><%= t("email") %></th>
+      		<th><%= t("message") %></th>
+			<th></th>
+    	</tr>
+  	</thead>
+	
+	<tbody>
+    	<% @inquiries.each do |inquiry| %>
+		<tr class="<%= cycle('even', 'odd') %>">
+			<td>
+				<%= inquiry.name %>
+			</td>
+			<td>
+				<%= inquiry.email %>
+			</td>
+			
+			<td>
+				<%=h truncate(inquiry.message, 100) %>
+			</td>
+			<td>
+				<%= link_to t("check_it"), object_url(inquiry) %> |
+	      <%=link_to t("delete_it"), object_url(inquiry), :method => :delete %>
+	     </td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+

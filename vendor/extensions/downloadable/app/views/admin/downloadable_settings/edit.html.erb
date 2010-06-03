@@ -1,0 +1,34 @@
+<%= render :partial => 'admin/shared/configuration_menu' %>
+
+<% render :partial => 'admin/shared/product_sub_menu' %>
+
+<h1><%= t('downloadable_preferences') %></h1>
+
+<% form_tag(admin_downloadable_settings_path, :method => :put) do -%>
+
+<div class="yui-g">
+
+  <div class="yui-u first">
+
+    <fieldset>
+      <legend><%= t('general') %></legend>
+
+      <p>
+        <label>
+          <%= check_box_tag('dummy[download_limit]', "1", Spree::Config[:download_limit] == 0, :disabled => true) %>
+          <%= t('unlimited') %>
+        </label>
+      </p>
+
+      <p>
+		<label> <%= t('limit') %> <sup><%= t("enter_0_for_unlimited") %></sup></label><br/>
+          <%= text_field_tag('preferences[download_limit]', Spree::Config[:download_limit], :maxlength => 10)%><br/>
+		<%= t("this_is_a_global_setting_for_new_orders_edit_certain_products_downloadable_attribute_to_be_more_specific") %>"
+      </p>
+    </fieldset>
+  </div>
+</div>
+
+<p class="form-buttons"><%= button t('save_preferences') %></p>
+
+<% end -%>

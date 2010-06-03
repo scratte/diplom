@@ -1,0 +1,46 @@
+<%= render :partial => 'admin/shared/product_sub_menu' %>
+
+<%= render :partial => 'admin/shared/product_tabs', :locals => {:current => "Downloadable Links"} %>
+
+<% form_for(:downloadable, :url => admin_product_downloadable_url(@product), :html => { :method => :put, :multipart => true }) do |f| %>
+  	<fieldset>
+		<% f.field_container :name do %>
+			<%= f.label :name, t("filename") %> <span class="required">*</span>
+			<sup><%= t("leaving_this_blank_will_use_the_file_stored_in_the_database") %></sup><br/>
+			<%= f.file_field :downloadable %><br/>
+			
+	    <% end %> 
+	
+		<% f.field_container :title do %>
+			<%= f.label t("title") %><span> <sup><%= t("defaults_to_filename_if_blank") %></sup></span><br/>
+			<%= f.text_field :title %>
+	  	<% end %>
+	
+		<% f.field_container :description do %>
+			<%= f.label t("description") %><br/>
+			<%= f.text_field :description %>
+	  	<% end %>
+	
+		<% f.field_container :enabled do %>
+			<%= f.label t("enabled") %><br/>
+			<%= f.check_box :enabled %>
+	  <% end %>
+		  
+		  <% if @product.variants? %>
+        <%= f.label Variant.human_name + ": " %>
+        <%= f.select :viewable_id, @variants %>
+      <% else %>
+        <%= hidden_field_tag :product_id, @product.id %>
+      <% end %>
+      
+          <% f.field_container :download_limit do %>
+    				<%= f.label :name, t("download_limit") %> <sup><%= t("defaults_to_global_settings_if_left_blank") %></sup><br/>
+    				<%= f.text_field :download_limit, :size => 7 %>
+    		  <% end %>
+      
+      <p class="form-buttons">
+        <%= button t("update") %>
+        or <%= link_to t("cancel"), admin_product_downloadables_path, :id => "cancel_link" %>
+      </p>
+	</fieldset>
+<% end %>

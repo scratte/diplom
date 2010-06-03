@@ -36,6 +36,11 @@
         <%= link_to t("taxons"), selected_admin_product_taxons_url(@product) %>
       </li>
     <% end %>
+    <% if url_options_authenticate?(:controller => 'admin/downloadables') %>
+      <li<%= ' class="active"' if current == "Downloadables" %>>
+        <%= link_to t("downloadables"), admin_product_downloadables_url(@product) %>
+      </li>
+    <% end %>
 
     <% end %>
   </ul>

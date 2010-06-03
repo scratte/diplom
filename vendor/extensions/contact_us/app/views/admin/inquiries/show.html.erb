@@ -1,0 +1,17 @@
+<h1><%= t("contact_us_form") %></h1>
+
+
+			<p>
+				<%= t("name") %>: <%= @inquiry.name %>
+			</p>
+			<p>
+				<%= t("email") %>: <%= @inquiry.email %>
+			</p>
+			<p>
+				<%= t("message") %>: <%=h @inquiry.message %>
+			</p>
+			<p>
+	<%= link_to t("back"), collection_url %> |      
+	<%=link_to t("delete"), object_url(@inquiry), :method => :delete %>
+	     </p>
+		</tr>
